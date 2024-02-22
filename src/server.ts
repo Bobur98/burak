@@ -10,6 +10,8 @@ console.log('EXUCUTED!');
 
 // Design pattern(projectning malum bir qismini arxitukturasi): Middleware, decorator
 
+
+// MONGODB: CLUSTER => DATABASE => COLLECTION => DOCUMENT
 import dotenv from "dotenv";
 
 dotenv.config();
