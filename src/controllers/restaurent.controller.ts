@@ -41,7 +41,6 @@ restaurentController.processLogin = (req: Request, res: Response) => {
 
 restaurentController.processSignup = async (req: Request, res: Response) => {
    try {
-      res.send('processSignup DONE')
       console.log('body', req.body);
 
       const newMember: MemberInput = req.body;

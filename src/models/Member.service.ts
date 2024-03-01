@@ -12,16 +12,16 @@ class MemberService {
     }
 
     public async processSignup(input: MemberInput): Promise<Member> {
+        console.log('----------');
         const exist = await this.memberModel
-            .findOne({memberType: MemberType})
+            .findOne({memberType: MemberType.RESTAURANT})
             .exec()
-        console.log('Exist: ', exist);
-        
         if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED)
-    
+        
         try {
             const result = await this.memberModel.create(input)
             console.log("Passed here!");
+            result.memberPassword = '';
             return result
         } catch(err) {
            throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED)
