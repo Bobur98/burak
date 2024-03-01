@@ -29,5 +29,20 @@ restaurentController.getSignup = (req: Request, res: Response) => {
       console.log("Error on getSignup: ", err);    
    }
 }
+restaurentController.processLogin = (req: Request, res: Response) => {
+   try {
+      res.send('DONE')
+   } catch (err) {
+      console.log("Error on processLogin: ", err);    
+   }
+}
+
+restaurentController.processSignup = (req: Request, res: Response) => {
+   try {
+      res.send('processSignup DONE')
+   } catch (err) {
+      console.log("Error on processSignup: ", err);    
+   }
+}
 
 export default restaurentController;
