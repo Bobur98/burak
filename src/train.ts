@@ -8,8 +8,13 @@ console.log("train is EXECUTED!");
     folder => KEBAB
     css = > SNAKE
    - Error handling
-
  */
+
+/*
+ Traditional API
+ REST API
+ GraphQL Api
+*/
 
 // H-TASK
 
