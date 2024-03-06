@@ -16,21 +16,66 @@ console.log("train is EXECUTED!");
  GraphQL Api
 */
 
+// Challange task
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+let code = 2;
+
+function decodeMessage(message: string, secret: number) {
+  let lowerCaseMessage = message.toLowerCase();
+  let decoded_msg = [];
+  for (let i = 0; i < lowerCaseMessage.length; i++){
+
+    let char_code = lowerCaseMessage.charCodeAt(i)
+    
+    if(char_code >= 97 && char_code <= 122){
+     
+        if(char_code + secret > 122) {
+          let startOver = (char_code + secret) - 122
+          decoded_msg.push(String.fromCharCode(96 + startOver))
+        } else if(char_code + secret < 97) {
+          let startBehind = 97 - (char_code + secret)          
+          decoded_msg.push(String.fromCharCode(123 - startBehind))
+        } else {
+          decoded_msg.push(String.fromCharCode(char_code + secret))
+        }
+      
+    } else {
+      decoded_msg.push(String.fromCharCode(char_code))
+    }
+  }
+   
+   return decoded_msg.join("")
+}
+const message = "Salom muchi, qalaysan?";
+
+
+const secret_msg = decodeMessage(message, code)
+console.log("Secret => ", secret_msg);
+
+setTimeout(() => {
+  code *= -1;
+  const msg_encoded = decodeMessage(secret_msg, code);
+  console.log("Original => ",msg_encoded);
+  
+}, 3000);
+
+
+
 // H-TASK
 
-function getPositive(arr: number[]) {
-    let positiveNums = ''
+// function getPositive(arr: number[]) {
+//     let positiveNums = ''
 
-    for(let i = 0; i <= arr.length; i++){
-        if(arr[i] > 0) {
-           positiveNums += arr[i]   
-        }
-     }
+//     for(let i = 0; i <= arr.length; i++){
+//         if(arr[i] > 0) {
+//            positiveNums += arr[i]   
+//         }
+//      }
 
-     return positiveNums
-}
+//      return positiveNums
+// }
 
-console.log(getPositive([1,-4,2,-1,5]));
+// console.log(getPositive([1,-4,2,-1,5]));
 
 
 // G-TASK
