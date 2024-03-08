@@ -16,16 +16,37 @@ console.log("train is EXECUTED!");
  GraphQL Api
 */
 
-// I-TASK
 
-function getDigits(str: string){
+// J-TASK
+
+function findLongestWord(str: string) {
+   const splitedStr = str.split(" ")
+   
+   let longestWord = splitedStr[0]
+
+   for(let word of splitedStr) {       
+ 
+    if(word.length >= longestWord.length) longestWord = word
+    
+   }
+
   
-  const digits = str.match(/\d/g);
-
-  return digits?.join('')
+  return longestWord
 }
 
-console.log(getDigits('s45f5s'));
+console.log(findLongestWord('I am from   Uzbekistan'));
+
+
+// I-TASK
+
+// function getDigits(str: string){
+  
+//   const digits = str.match(/\d/g);
+
+//   return digits?.join('')
+// }
+
+// console.log(getDigits('s45f5s'));
 
 
 // Challange task
