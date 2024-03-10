@@ -8,8 +8,8 @@ import Errors from "../libs/Errors";
 
 const memberController: T = {};
 const memberService = new MemberService();
-
 memberController.signup = async (req: Request, res: Response) => {
+
     try {
        console.log('body', req.body);
  
