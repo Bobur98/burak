@@ -17,24 +17,32 @@ console.log("train is EXECUTED!");
 */
 
 
-// J-TASK
-
-function findLongestWord(str: string) {
-   const splitedStr = str.split(" ")
-   
-   let longestWord = splitedStr[0]
-
-   for(let word of splitedStr) {       
- 
-    if(word.length >= longestWord.length) longestWord = word
-    
-   }
-
-  
-  return longestWord
+// K-TASK
+function countVowels(str: string) {
+  return str.match(/[aeiou]/ig)?.length
 }
 
-console.log(findLongestWord('I am from   Uzbekistan'));
+console.log(countVowels('string'));
+
+
+// J-TASK
+
+// function findLongestWord(str: string) {
+//    const splitedStr = str.split(" ")
+   
+//    let longestWord = splitedStr[0]
+
+//    for(let word of splitedStr) {       
+ 
+//     if(word.length >= longestWord.length) longestWord = word
+    
+//    }
+
+  
+//   return longestWord
+// }
+
+// console.log(findLongestWord('I am from   Uzbekistan'));
 
 
 // I-TASK
