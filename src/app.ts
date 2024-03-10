@@ -10,7 +10,8 @@ import ConnectMongoDBSession from 'connect-mongodb-session';
 
 const MongoDBStore = ConnectMongoDBSession(session)
 const store = new MongoDBStore({
-   uri: String(process.env.MONGO_URL),
+   // uri: String(process.env.MONGO_URL),
+   uri: 'mongodb+srv://Brian:10031998b@cluster0.bkrlpmt.mongodb.net/Burak',
    collection: "sessions"
 })
 
@@ -28,13 +29,13 @@ app.use(
    session({
       secret: String(process.env.SESSION_SECRET),
       cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
+         maxAge: 1000 * 3600 * 3 // 3 hrs
       },
       store: store,
       resave: true,
       saveUninitialized: true
    })
-)
+);
 
 /** 3-VIEWS **/
 app.set("views", path.join(__dirname, 'views'));
