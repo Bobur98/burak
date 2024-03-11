@@ -3,7 +3,7 @@ import { T } from "../libs/types/common"
 import MemberService from "../models/Member.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
-import { Message } from "../libs/Errors";
+import Errors, { Message } from "../libs/Errors";
 const restaurentController: T = {};
 const memberService = new MemberService()
 
@@ -13,6 +13,7 @@ restaurentController.goHome = (req: Request, res: Response) => {
       res.render("home")
    } catch(err) {
        console.log('Error on goHome: ', err);
+       res.redirect('/admin')
    }
 }
 
@@ -22,6 +23,7 @@ restaurentController.getLogin = (req: Request, res: Response) => {
       res.render("login")
    } catch (err) {
        console.log('Error on getLogin: ', err);
+       res.redirect('/admin')
    }
 }
 
@@ -30,7 +32,8 @@ restaurentController.getSignup = (req: Request, res: Response) => {
       console.log("Signup page");
       res.render("signup")
    } catch (err) {
-      console.log("Error on getSignup: ", err);    
+      console.log("Error on getSignup: ", err);
+      res.redirect('/admin')    
    }
 }
 
@@ -53,8 +56,8 @@ restaurentController.processSignup = async (req: AdminRequest, res: Response) =>
 
    } catch (err) {
       console.log("Error on processSignup: ", err);
-      res.send(err)    
-   }
+      const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG
+      res.send(`<script>alert("${message}"); window.location.replace("admin/signup")</script>`)           }
 }
 
 restaurentController.processLogin = async (req: AdminRequest, res: Response) => {
@@ -72,10 +75,25 @@ restaurentController.processLogin = async (req: AdminRequest, res: Response) => 
       });
       
    } catch (err) {
-      console.log("Error on processLogin: ", err);    
+      console.log("Error on processLogin: ", err);
+      const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG
+      res.send(`<script>alert("${message}"); window.location.replace("admin/login")</script>`)        
    }
 }
 
+
+
+restaurentController.logout = async (req: AdminRequest, res: Response) => {
+   try {
+      console.log('logout');
+      req.session.destroy(function() {
+         res.redirect('/admin')
+      })
+   } catch (err) {
+      console.log("Error on logout: ", err);
+      res.redirect('/admin')    
+   }
+}
 
 restaurentController.checkAuthSession = async (req: AdminRequest, res: Response) => {
    try {
