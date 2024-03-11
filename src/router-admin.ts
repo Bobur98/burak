@@ -14,6 +14,8 @@ routerAdmin
     .get("/signup", restaurentController.getSignup)
     .post('/signup', restaurentController.processSignup)
 
+routerAdmin.get('/check-me', restaurentController.checkAuthSession);
+
 // Product
 // User
 
