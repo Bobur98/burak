@@ -27,12 +27,27 @@ console.log("train is EXECUTED!");
  * Database validation
  */
 
-// K-TASK
-function countVowels(str: string) {
-  return str.match(/[aeiou]/ig)?.length
-}
 
-console.log(countVowels('string'));
+// L-TASK
+function reverseSentence(str: string) {
+  const splittedStr = str.split(' ')
+  let reversedStr = []
+
+  for(const word of splittedStr){
+    reversedStr.push(word.split('').reverse().join(""))
+  }
+
+  return reversedStr.join(' ')
+} 
+
+console.log(reverseSentence('we like Coding!'));
+
+// K-TASK
+// function countVowels(str: string) {
+//   return str.match(/[aeiou]/ig)?.length
+// }
+
+// console.log(countVowels('string'));
 
 
 // J-TASK
