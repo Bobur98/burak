@@ -46,7 +46,7 @@ restaurentController.processSignup = async (req: AdminRequest, res: Response) =>
 
       const result = await memberService.processSignup(newMember);
       
-      //    TODO: SESSIONS AUTHENTICATION
+      //SESSIONS AUTHENTICATION
       
       req.session.member = result
       req.session.save(function() {
