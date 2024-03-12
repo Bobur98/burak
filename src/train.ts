@@ -16,6 +16,16 @@ console.log("train is EXECUTED!");
  GraphQL Api
 */
 
+/** Cookies
+ * request join
+ * self destroy
+ */
+
+/** Validation:
+ * Frontend validation
+ * Backend validation
+ * Database validation
+ */
 
 // K-TASK
 function countVowels(str: string) {
