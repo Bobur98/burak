@@ -1,7 +1,7 @@
 export enum ProductSize {
     SMALL = 'SMALL',
     NORMAL = 'NORMAL',
-    LARGE = 'LARGER',
+    LARGE = 'LARGE',
     SET = 'SET'
 }
 
