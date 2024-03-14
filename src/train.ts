@@ -28,19 +28,33 @@ console.log("train is EXECUTED!");
  */
 
 
+// M-TASK
+function getSquareNumber(arr: number[]){
+   let newArr = [];
+
+   for(let i = 0; i < arr.length; i++) {
+    newArr.push({number: arr[i], square: arr[i]*arr[i]})
+   }
+
+   return newArr
+}
+
+console.log(getSquareNumber([1,2,3]));
+
+
 // L-TASK
-function reverseSentence(str: string) {
-  const splittedStr = str.split(' ')
-  let reversedStr = []
+// function reverseSentence(str: string) {
+//   const splittedStr = str.split(' ')
+//   let reversedStr = []
 
-  for(const word of splittedStr){
-    reversedStr.push(word.split('').reverse().join(""))
-  }
+//   for(const word of splittedStr){
+//     reversedStr.push(word.split('').reverse().join(""))
+//   }
 
-  return reversedStr.join(' ')
-} 
+//   return reversedStr.join(' ')
+// } 
 
-console.log(reverseSentence('we like Coding!'));
+// console.log(reverseSentence('we like Coding!'));
 
 // K-TASK
 // function countVowels(str: string) {
