@@ -18,7 +18,7 @@ routerAdmin
 
 routerAdmin.get('/logout', restaurentController.logout);
 routerAdmin.get('/check-me', restaurentController.checkAuthSession);
-
+ 
 // Product
 routerAdmin.get('/product/all', restaurentController.verifyRestaurant, productController.getAllProducts);
 routerAdmin.post('/product/create',  restaurentController.verifyRestaurant, makeUploader('products').array('productImages', 5), productController.createNewProduct);
