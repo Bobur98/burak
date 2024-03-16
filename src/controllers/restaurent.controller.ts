@@ -100,6 +100,8 @@ restaurentController.logout = async (req: AdminRequest, res: Response) => {
    }
 }
 
+
+
 restaurentController.checkAuthSession = async (req: AdminRequest, res: Response) => {
    try {
       console.log('checkAuthSession');
@@ -110,6 +112,28 @@ restaurentController.checkAuthSession = async (req: AdminRequest, res: Response)
       console.log("Error on processLogin: ", err);    
    }
 }
+
+restaurentController.getUsers = async (req: Request, res: Response) => {
+   try {
+      console.log("getUsers");
+      const result = await memberService.getUsers();
+
+      res.render("users", {users: result})
+   } catch (err) {
+      console.log("Error on getUsers: ", err);
+      res.redirect('/admin/login')    
+   }
+}
+
+restaurentController.updateChosenUser = (req: Request, res: Response) => {
+   try {
+      console.log("updateChosenUser");
+   } catch (err) {
+      console.log("Error on updateChosenUser: ", err);
+      res.redirect('/admin')    
+   }
+}
+
 
 restaurentController.verifyRestaurant = async (req: AdminRequest, res: Response, next: NextFunction) => {
  

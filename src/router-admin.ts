@@ -25,5 +25,6 @@ routerAdmin.post('/product/create',  restaurentController.verifyRestaurant, make
 routerAdmin.post('/product/:id',  restaurentController.verifyRestaurant, productController.updateChosenProduct);
 
 // User
+routerAdmin.get("/user/all", restaurentController.verifyRestaurant, restaurentController.getUsers)
 
 export default routerAdmin; // SPA: 
