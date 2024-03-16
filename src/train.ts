@@ -28,18 +28,32 @@ console.log("train is EXECUTED!");
  */
 
 
-// M-TASK
-function getSquareNumber(arr: number[]){
-   let newArr = [];
+// N-TASK
+function palindromCheck(word: string) {
+  let backward = ''
+  let forward = word.toLowerCase()
+  for(let i = forward.length-1; i >= 0; i--){
+    backward += forward[i]
+  }
 
-   for(let i = 0; i < arr.length; i++) {
-    newArr.push({number: arr[i], square: arr[i]*arr[i]})
-   }
-
-   return newArr
+  return backward === forward
 }
 
-console.log(getSquareNumber([1,2,3]));
+console.log(palindromCheck('dad'));
+
+
+// M-TASK
+// function getSquareNumber(arr: number[]){
+//    let newArr = [];
+
+//    for(let i = 0; i < arr.length; i++) {
+//     newArr.push({number: arr[i], square: arr[i]*arr[i]})
+//    }
+
+//    return newArr
+// }
+
+// console.log(getSquareNumber([1,2,3]));
 
 
 // L-TASK
