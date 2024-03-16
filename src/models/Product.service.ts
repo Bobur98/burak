@@ -38,7 +38,7 @@ class ProductService {
     id = shapeIntoMongooseObjectId(id);
 
     const result = await this.productModel.findOneAndUpdate({_id: id}, input, {new: true}).exec();
-    if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.UPDATE_DAILED);
+    if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.UPDATE_FAILED);
 
     console.log(result, 'result');
     return result

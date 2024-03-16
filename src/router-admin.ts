@@ -26,5 +26,6 @@ routerAdmin.post('/product/:id',  restaurentController.verifyRestaurant, product
 
 // User
 routerAdmin.get("/user/all", restaurentController.verifyRestaurant, restaurentController.getUsers)
+routerAdmin.post("/user/edit", restaurentController.verifyRestaurant, restaurentController.updateChosenUser)
 
 export default routerAdmin; // SPA: 
