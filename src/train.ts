@@ -28,18 +28,31 @@ console.log("train is EXECUTED!");
  */
 
 
-// N-TASK
-function palindromCheck(word: string) {
-  let backward = ''
-  let forward = word.toLowerCase()
-  for(let i = forward.length-1; i >= 0; i--){
-    backward += forward[i]
+// O-TASK
+function calculateSumOfNumbers(arr: any[]) {
+  let sum = 0;
+  for (let i = 0; i <= arr.length; i++){
+   if(typeof arr[i] === 'number') sum += arr[i]
   }
 
-  return backward === forward
+  return sum;
 }
 
-console.log(palindromCheck('dad'));
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35]));
+
+
+// N-TASK
+// function palindromCheck(word: string) {
+//   let backward = ''
+//   let forward = word.toLowerCase()
+//   for(let i = forward.length-1; i >= 0; i--){
+//     backward += forward[i]
+//   }
+
+//   return backward === forward
+// }
+
+// console.log(palindromCheck('dad'));
 
 
 // M-TASK
