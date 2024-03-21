@@ -27,18 +27,27 @@ console.log("train is EXECUTED!");
  * Database validation
  */
 
+// P-TASK
+ function objectToArray (obj:Object) {
+  
+    return Object.entries(obj);
+ }
+
+ console.log(objectToArray( {a: 10, b: 20}));
+ 
+
 
 // O-TASK
-function calculateSumOfNumbers(arr: any[]) {
-  let sum = 0;
-  for (let i = 0; i <= arr.length; i++){
-   if(typeof arr[i] === 'number') sum += arr[i]
-  }
+// function calculateSumOfNumbers(arr: any[]) {
+//   let sum = 0;
+//   for (let i = 0; i <= arr.length; i++){
+//    if(typeof arr[i] === 'number') sum += arr[i]
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
-console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35]));
+// console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35]));
 
 
 // N-TASK
