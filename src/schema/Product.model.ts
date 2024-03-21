@@ -59,7 +59,7 @@ const productSchema = new Schema({
 );
 
 productSchema.index(
-    {producName: 1, productSize: 1, productVolume: 1},
+    {productName: 1, productSize: 1, productVolume: 1}, // hatolik beryabti product qoshganda
     {unique: true}
 )
 
