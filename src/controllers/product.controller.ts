@@ -41,12 +41,12 @@ productController.getAllProducts = async (req: Request, res: Response) => {
       await productService.createNewProduct(data)
 
 
-      res.send(`<script>alert("Successful creation"); window.location.replace("admin/product/all")</script>`)
+      res.send(`<script>alert("Successful creation"); window.location.replace("/admin/product/all")</script>`)
 
     } catch(err) {
         console.log('Error on getAllProducts: ', err);
         const message = err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG
-        res.send(`<script>alert("${message}"); window.location.replace("admin/product/all")</script>`)
+        res.send(`<script>alert("${message}"); window.location.replace("/admin/product/all")</script>`)
 
     }
  }
