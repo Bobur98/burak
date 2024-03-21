@@ -7,6 +7,7 @@ $(function () {
     fileTarget.on('change', function() {
         if(window.FileReader){
             const uploadFile = $(this)[0].files[0];
+            
             const fileType = uploadFile['type'];
             const validImageType = ['image/jpg', 'image/jpeg', 'image/png'];
             if(!validImageType.includes(fileType)){
