@@ -27,13 +27,25 @@ console.log("train is EXECUTED!");
  * Database validation
  */
 
-// P-TASK
- function objectToArray (obj:Object) {
-  
-    return Object.entries(obj);
- }
+// Q-TASK
+  function hasProperty(obj:any, str:string) {
+    let has = false
+    for (let key in obj) {
+        if(key === str) has = true
+        else has = false
+    }
+    return has
+}
+console.log('MIT TASK Q-TASK:');
+console.log(hasProperty({name: "BMW", model: "M3"}, "moddel"));
 
- console.log(objectToArray( {a: 10, b: 20}));
+// // P-TASK
+//  function objectToArray (obj:Object) {
+  
+//     return Object.entries(obj);
+//  }
+
+//  console.log(objectToArray( {a: 10, b: 20}));
  
 
 
