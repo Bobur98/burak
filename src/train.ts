@@ -27,17 +27,37 @@ console.log("train is EXECUTED!");
  * Database validation
  */
 
-// Q-TASK
-  function hasProperty(obj:any, str:string) {
-    let has = false
-    for (let key in obj) {
-        if(key === str) has = true
-        else has = false
+// R-TASK
+
+function calculate(str:string) {
+    // Splitting the expression based on the operator
+    let plus = str.split('+');
+    
+    // Parsing the operands and summing them up
+    let sum = 0;
+    for (let i of plus) {
+        sum += parseInt(i);
     }
-    return has
+    
+    return sum;
 }
-console.log('MIT TASK Q-TASK:');
-console.log(hasProperty({name: "BMW", model: "M3"}, "moddel"));
+
+// Test
+console.log(calculate("1+3")); // Output: 4
+
+
+
+// Q-TASK
+//   function hasProperty(obj:any, str:string) {
+//     let has = false
+//     for (let key in obj) {
+//         if(key === str) has = true
+//         else has = false
+//     }
+//     return has
+// }
+// console.log('MIT TASK Q-TASK:');
+// console.log(hasProperty({name: "BMW", model: "M3"}, "moddel"));
 
 // // P-TASK
 //  function objectToArray (obj:Object) {
